@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.test_files    = ["spec/arest_spec.rb", "spec/spec_helper.rb"]
   s.homepage      = "https://github.com/grych/arest"
   s.license       = "MIT"
-  s.add_runtime_dependency "json", ">= 1.8.3"
-  s.add_runtime_dependency "activesupport", ">= 3.2.13"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "bundler"
+  s.add_runtime_dependency "json", '~> 1.8', '>= 1.8.3'
+  s.add_runtime_dependency "activesupport", '~> 4.2', '>= 4.2.1'
+  s.add_development_dependency "rspec", '~> 3.2', '>= 3.2.0'
+  s.add_development_dependency "bundler", "~> 1.8"
 end

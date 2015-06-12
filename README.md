@@ -24,6 +24,9 @@ Very simple REST client. Provides basic REST operations: get, post, put and dele
     >> pass = client.get('/db/prod/oracle/scott').deserialize
     => "t1ger"
 
+## More examples
+Take a look on *spec* folder
+
 # License
 MIT
 
