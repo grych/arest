@@ -1,14 +1,14 @@
 # ARest Ruby Gem
 Very simple REST client. Provides basic REST operations: get, post, put and delete
 
->> client = ARest.new 'http://jsonplaceholder.typicode.com'
-=> <ARest http://jsonplaceholder.typicode.com>
->> res = client.post('posts', form_data: { title: 'foo', body: 'bar', userId: 1 })
-=> #<Net::HTTPOK 200 OK readbody=true>
->> res.ok?
-=> true
->> res.deserialize
-=> {"title"=>"foo", "body"=>"bar", "userId"=>1, "id"=>101}
+    >> client = ARest.new 'http://jsonplaceholder.typicode.com'
+    => <ARest http://jsonplaceholder.typicode.com>
+    >> res = client.post('posts', form_data: { title: 'foo', body: 'bar', userId: 1 })
+    => #<Net::HTTPOK 200 OK readbody=true>
+    >> res.ok?
+    => true
+    >> res.deserialize
+    => {"title"=>"foo", "body"=>"bar", "userId"=>1, "id"=>101}
 
 ## Basic http authentication
 
