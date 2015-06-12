@@ -1,0 +1,16 @@
+/.bundle
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
+.test_user_password
+*.sublime-project
+*.sublime-workspace
+/storage
+/.idea
+.tags*
+.gemtags
+.ruby-version
+*.gem
