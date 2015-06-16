@@ -8,9 +8,9 @@ class Net::HTTPResponse
   def deserialize
     case content_type
     when "application/xml"
-      Hash.from_xml body
+      Hash.from_xml(body).deep_symbolize_keys
     when "application/json"
-      JSON.parse body
+      JSON.parse body, symbolize_names: true
     else
       body
     end
@@ -46,25 +46,57 @@ class ARest
   end
 
   # Perform a HTTP GET request. Requires a path to current operation
-  # See #execute for details
+  # If given, headers and http authentication can be override
+  #
+  # Input
+  # * path - relative to URI given in constructor
+  # Options Hash
+  # * headers - overrides the header given in constructor
+  # * username, password - overrides the http authentication
+  # * token - overrides authorization token
+  # * form_data - hash with HTML form data
   def get(path, **options)
     execute :get, path, options
   end
 
   # Perform a HTTP POST request. Requires a path to current operation
-  # See #execute for details
+  # If given, headers and http authentication can be override
+  #
+  # Input
+  # * path - relative to URI given in constructor
+  # Options Hash
+  # * headers - overrides the header given in constructor
+  # * username, password - overrides the http authentication
+  # * token - overrides authorization token
+  # * form_data - hash with HTML form data
   def post(path, **options)
     execute :post, path, options
   end
 
   # Perform a HTTP PUT request. Requires a path to current operation
-  # See #execute for details
+  # If given, headers and http authentication can be override
+  #
+  # Input
+  # * path - relative to URI given in constructor
+  # Options Hash
+  # * headers - overrides the header given in constructor
+  # * username, password - overrides the http authentication
+  # * token - overrides authorization token
+  # * form_data - hash with HTML form data
   def put(path, **options)
     execute :put, path, options
   end
 
   # Perform a HTTP DELETE request. Requires a path to current operation
-  # See #execute for details
+  # If given, headers and http authentication can be override
+  #
+  # Input
+  # * path - relative to URI given in constructor
+  # Options Hash
+  # * headers - overrides the header given in constructor
+  # * username, password - overrides the http authentication
+  # * token - overrides authorization token
+  # * form_data - hash with HTML form data
   def delete(path, **options)
     execute :delete, path, options
   end

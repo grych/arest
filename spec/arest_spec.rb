@@ -13,19 +13,19 @@ describe ARest do
       end
       it "should be able to GET fake user" do
         user = @client.get('users/1').deserialize
-        expect(user["name"]).to eq "Leanne Graham"
+        expect(user[:name]).to eq "Leanne Graham"
       end
       it "should be able to POST fake post" do
         posts_res = @client.post('posts', form_data: { title: 'foo', body: 'bar', userId: 1 })
         expect(posts_res).to be_ok
         post = posts_res.deserialize
-        expect(post['title']).to eq 'foo'
+        expect(post[:title]).to eq 'foo'
       end
       it "should be able to PUT fake post" do
         posts_res = @client.put('posts/1', form_data: { id: 1, title: 'foo', body: 'bar', userId: 1 })
         expect(posts_res).to be_ok
         post = posts_res.deserialize
-        expect(post['title']).to eq 'foo'
+        expect(post[:title]).to eq 'foo'
       end
       it "should be able to DELETE fake post" do
         posts_res = @client.delete('posts/1')
@@ -54,7 +54,7 @@ describe ARest do
       end
       it "should be able to get password with form authentication" do
         pass = @arest.post('/db/prod/oracle/scott.json', form_data: { email: 'user@example.com', password: 'password0'}).deserialize
-        expect(pass['password']).to eq 't1ger'
+        expect(pass[:password]).to eq 't1ger'
       end
     end
 
@@ -77,8 +77,8 @@ describe ARest do
         @client = ARest.new 'http://www.thomas-bayer.com/sqlrest'
       end
       it "should be able to get the fake customer" do 
-        customer = @client.get('CUSTOMER/3').deserialize['CUSTOMER']
-        expect(customer['FIRSTNAME']).to eq "Michael"
+        customer = @client.get('CUSTOMER/3').deserialize[:CUSTOMER]
+        expect(customer[:FIRSTNAME]).to eq "Michael"
       end
     end
   end

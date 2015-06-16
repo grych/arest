@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'arest'
-  s.version       = '0.9.1.0'
+  s.version       = '0.9.1.1'
   s.date          = '2015-06-12'
   s.summary       = "A REST client"
   s.description   = "A Very Simple REST client"
